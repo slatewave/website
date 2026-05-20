@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Slate Tech | IT Consulting & Data Center Advisory</title>
+
+  <title>SlateWave | IT Consulting & Data Center Advisory</title>
+
+  <meta
+    name="description"
+    content="SlateWave provides IT consulting, infrastructure strategy, and data center advisory services for modern businesses."
+  />
 
   <style>
     * {
@@ -12,111 +18,256 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0f172a;
+      font-family: Inter, Arial, sans-serif;
+      background: #0b1120;
       color: #f8fafc;
       line-height: 1.6;
     }
 
-    header {
-      background: linear-gradient(135deg, #111827, #1e293b);
-      padding: 80px 20px;
-      text-align: center;
+    a {
+      text-decoration: none;
     }
 
     .container {
-      max-width: 1100px;
+      width: 90%;
+      max-width: 1150px;
       margin: auto;
-      padding: 0 20px;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(11, 17, 32, 0.75);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: #60a5fa;
+    }
+
+    .nav-links a {
+      margin-left: 24px;
+      color: #cbd5e1;
+      transition: 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,0.35), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(59,130,246,0.15), transparent 30%),
+        #0b1120;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      padding: 100px 0;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 8px 14px;
+      background: rgba(96,165,250,0.15);
+      color: #93c5fd;
+      border: 1px solid rgba(96,165,250,0.2);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 25px;
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
+      font-size: 4rem;
+      line-height: 1.05;
+      margin-bottom: 25px;
+      font-weight: 800;
     }
 
-    .tagline {
-      font-size: 1.25rem;
+    .hero p {
       color: #cbd5e1;
-      margin-bottom: 30px;
+      font-size: 1.15rem;
+      max-width: 650px;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     .btn {
       display: inline-block;
       padding: 14px 28px;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
+      border-radius: 10px;
+      font-weight: 600;
       transition: 0.3s ease;
     }
 
-    .btn:hover {
-      background: #1d4ed8;
+    .btn-primary {
+      background: #2563eb;
+      color: white;
     }
 
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #e2e8f0;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    /* SECTIONS */
+
     section {
-      padding: 70px 20px;
+      padding: 90px 0;
     }
 
     .section-title {
-      font-size: 2rem;
-      margin-bottom: 20px;
       text-align: center;
+      margin-bottom: 18px;
+      font-size: 2.3rem;
+      font-weight: 700;
     }
 
-    .section-text {
-      max-width: 800px;
+    .section-subtitle {
+      text-align: center;
+      color: #94a3b8;
+      max-width: 760px;
       margin: auto;
-      text-align: center;
-      color: #cbd5e1;
+      margin-bottom: 55px;
     }
 
-    .services {
+    /* CARDS */
+
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-      margin-top: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
     }
 
     .card {
-      background: #1e293b;
-      padding: 30px;
-      border-radius: 10px;
-      border: 1px solid #334155;
+      background: linear-gradient(
+        180deg,
+        rgba(30,41,59,0.95),
+        rgba(15,23,42,0.95)
+      );
+
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px;
+      padding: 34px;
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(96,165,250,0.4);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.35);
     }
 
     .card h3 {
-      margin-bottom: 15px;
-      color: #60a5fa;
+      margin-bottom: 14px;
+      color: #93c5fd;
+      font-size: 1.3rem;
     }
 
     .card p {
       color: #cbd5e1;
+      font-size: 0.98rem;
     }
 
-    .contact {
+    /* CTA */
+
+    .cta {
       text-align: center;
-      background: #111827;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(37,99,235,0.18),
+          rgba(15,23,42,1)
+        );
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
+
+    .cta p {
+      max-width: 720px;
+      margin: 20px auto 35px;
+      color: #cbd5e1;
+    }
+
+    /* FOOTER */
 
     footer {
+      padding: 35px 0;
       text-align: center;
-      padding: 25px;
-      background: #020617;
-      color: #94a3b8;
-      font-size: 0.9rem;
+      color: #64748b;
+      font-size: 0.92rem;
     }
 
+    footer a {
+      color: #93c5fd;
+    }
+
+    /* MOBILE */
+
     @media (max-width: 768px) {
+
       h1 {
-        font-size: 2.2rem;
+        font-size: 2.7rem;
       }
 
-      .tagline {
+      .hero p {
         font-size: 1rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        text-align: center;
       }
     }
   </style>
@@ -124,59 +275,91 @@
 
 <body>
 
-  <header>
-    <div class="container">
-      <h1>Slate Tech</h1>
-      <p class="tagline">
-        IT Consulting & Data Center Advisory Services
+  <nav>
+    <div class="container nav-content">
+      <div class="logo">
+        Slate<span>Wave</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-content">
+
+      <div class="hero-tag">
+        IT Consulting • Infrastructure Strategy • Data Center Advisory
+      </div>
+
+      <h1>
+        Modern Infrastructure.<br />
+        Strategic IT Guidance.
+      </h1>
+
+      <p>
+        SlateWave helps businesses design, optimize, and scale
+        technology infrastructure through expert IT consulting,
+        data center advisory, cloud strategy, and enterprise
+        systems planning.
       </p>
 
-      <a href="mailto:info@slatetech.com" class="btn">
-        Contact Us
-      </a>
+      <div class="buttons">
+        <a href="mailto:info@slatewave.net" class="btn btn-primary">
+          Contact Us
+        </a>
+
+        <a href="#services" class="btn btn-secondary">
+          View Services
+        </a>
+      </div>
+
     </div>
   </header>
 
-  <section>
+  <section id="services">
     <div class="container">
-      <h2 class="section-title">Technology Strategy Built for Scale</h2>
 
-      <p class="section-text">
-        Slate Tech helps organizations modernize infrastructure, optimize
-        operations, and plan scalable technology solutions. We provide expert
-        IT consulting and data center advisory services for growing businesses,
-        enterprises, and infrastructure projects.
+      <h2 class="section-title">Services</h2>
+
+      <p class="section-subtitle">
+        Practical technology leadership and infrastructure expertise
+        for organizations modernizing operations and preparing for growth.
       </p>
-    </div>
-  </section>
 
-  <section>
-    <div class="container">
-      <h2 class="section-title">Our Services</h2>
-
-      <div class="services">
+      <div class="grid">
 
         <div class="card">
           <h3>IT Consulting</h3>
+
           <p>
-            Strategic technology planning, systems evaluation, infrastructure
-            optimization, and operational guidance tailored to your business.
+            Strategic guidance for infrastructure modernization,
+            operational efficiency, systems architecture, and
+            enterprise technology planning.
           </p>
         </div>
 
         <div class="card">
           <h3>Data Center Advisory</h3>
+
           <p>
-            Guidance for data center planning, capacity management, colocation,
-            cloud migration, and infrastructure modernization initiatives.
+            Expertise in colocation strategy, capacity planning,
+            infrastructure assessments, migration planning,
+            resiliency, and operational optimization.
           </p>
         </div>
 
         <div class="card">
-          <h3>Infrastructure Solutions</h3>
+          <h3>Cloud & Infrastructure</h3>
+
           <p>
-            Support for networking, virtualization, cloud architecture,
-            disaster recovery, and enterprise systems design.
+            Support for hybrid cloud environments, networking,
+            virtualization, backup strategy, and scalable
+            infrastructure design.
           </p>
         </div>
 
@@ -184,23 +367,42 @@
     </div>
   </section>
 
-  <section class="contact">
+  <section id="about">
     <div class="container">
-      <h2 class="section-title">Let’s Build Smarter Infrastructure</h2>
 
-      <p class="section-text" style="margin-bottom: 30px;">
-        Ready to improve your IT strategy or data center operations?
-        Reach out to discuss your project.
+      <h2 class="section-title">About SlateWave</h2>
+
+      <p class="section-subtitle">
+        We partner with businesses that need reliable technology
+        leadership and practical infrastructure expertise without
+        unnecessary complexity. Our focus is delivering scalable,
+        resilient, and efficient IT environments aligned to business goals.
       </p>
 
-      <a href="mailto:info@slatetech.com" class="btn">
-        info@slatetech.com
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="container">
+
+      <h2 class="section-title">
+        Ready to Modernize Your Infrastructure?
+      </h2>
+
+      <p>
+        Whether you're planning a migration, evaluating a data center strategy,
+        or improving operational resilience, SlateWave can help.
+      </p>
+
+      <a href="mailto:info@slatewave.net" class="btn btn-primary">
+        info@slatewave.net
       </a>
+
     </div>
   </section>
 
   <footer>
-    © 2026 Slate Tech. All rights reserved.
+    © 2026 SlateWave • <a href="https://www.slatewave.net">www.slatewave.net</a>
   </footer>
 
 </body>
